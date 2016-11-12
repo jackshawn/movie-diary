@@ -9,7 +9,7 @@
             padding: 0;
         }
 
-        .wrap {
+        .first {
             position: absolute;
             top: 0;
             right: 0;
@@ -17,42 +17,97 @@
             left: 0;
             width: auto;
             height: auto;
-            background: #ccc;
+            background: url('images/1.jpg') center no-repeat;
+            background-size: cover;
         }
 
-        .wrap .first {
+        .center-card {
             position: absolute;
             top: 60%;
             left: 50%;
             transform: translateX(-50%);
             padding: 10px 50px;
             background: #b3b3b3;
-            opacity: .5;
-            border-radius: 10px;
-
+            opacity: .75;
+            border-radius: 5px;
         }
 
-        .remark {
+        .mark {
             text-align: center;
             font: bold 36px/1.5em '';
         }
 
-        .next {
+        .links {
+            text-align: center;
+        }
+
+        #next {
+            background: #dfdfdf;
+        }
+
+        .cards {
+            position: relative;
+            height: 360px;
+        }
+
+        .line {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -10px;
+            width: 20px;
+            height: 360px;
+            background: #666;
+            overflow: hidden;
+        }
+
+        .dots {
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            margin-left: -8px;
+            width: 10px;
+            height: 366px;
+            border: 3px dotted #dfdfdf;
+            background: #666;
         }
     </style>
 </head>
 <body>
-<div class="wrap">
-    <div class="first">
-        <div class="remark">
+<div class="first">
+    <div class="center-card">
+        <div class="mark">
             <p class="name">《XXX》</p>
             <p class="date">2016.11.10</p>
             <p class="star">***</p>
         </div>
-    </div>
-    <div class="next">
-
+        <div class="links">
+            <a href="">Likes</a>
+            <a href="">Random</a>
+            <a href="">Top10</a>
+        </div>
     </div>
 </div>
+<div id="next">
+    <div class="cards">
+        <div class="line">
+            <div class="dots"></div>
+        </div>
+    </div>
+    <div class="cards">
+        <div class="line">
+            <div class="dots"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function () {
+        var resizeFn = function () {
+            document.getElementById('next').style.paddingTop = innerHeight + 5 + 'px';
+        };
+        resizeFn();
+        window.onresize = resizeFn;
+    })()
+</script>
 </body>
 </html>
