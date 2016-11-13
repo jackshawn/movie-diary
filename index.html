@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>MovieDiary</title>
+    <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -23,13 +24,16 @@
 
         .center-card {
             position: absolute;
-            top: 60%;
+            bottom: 10%;
             left: 50%;
             transform: translateX(-50%);
             padding: 10px 50px;
             background: #b3b3b3;
             opacity: .75;
             border-radius: 5px;
+            overflow: hidden;
+            animation: card 1s;
+            animation-fill-mode: forwards;
         }
 
         .mark {
@@ -37,8 +41,70 @@
             font: bold 36px/1.5em '';
         }
 
+        .star {
+            color: yellow;
+        }
+
+        .star-bottom {
+            width: 34px;
+            height: 36px;
+            position: absolute;
+            margin-top: -36px;
+            margin-left: -17px;
+            z-index: -2;
+        }
+
+        .star-middle {
+            width: 24px;
+            height: 36px;
+            position: absolute;
+            margin-top: -36px;
+            margin-left: -12px;
+            background: #b3b3b3;
+            z-index: -1;
+        }
+
+        .middle1 {
+            animation: star .5s .5s;
+            animation-fill-mode: forwards;
+        }
+
+        .middle2 {
+            animation: star .3s 1s;
+            animation-fill-mode: forwards;
+        }
+
+        .middle3 {
+            animation: star .3s 1.3s;
+            animation-fill-mode: forwards;
+        }
+
+        .middle4 {
+            animation: star 1s 1.6s;
+            animation-fill-mode: forwards;
+        }
+
         .links {
             text-align: center;
+        }
+
+        .links a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .center-card .card-side {
+            width: 24px;
+            position: absolute;
+            top: 0;
+        }
+
+        .card-side .q {
+            width: 24px;
+            height: 24px;
+            margin: 8px 0;
+            border-radius: 4px;
+            background: #666;
         }
 
         #next {
@@ -71,20 +137,74 @@
             border: 3px dotted #dfdfdf;
             background: #666;
         }
+
+        /*animate*/
+        @-webkit-keyframes star {
+            from {
+                margin-left: -12px;
+            }
+            to {
+                margin-left: 12px;
+            }
+        }
+
+        @-webkit-keyframes card {
+            from {
+                min-width: 88px;
+                height: 0;
+            }
+            to {
+                height: 180px;
+                min-width: 300px;
+            }
+        }
     </style>
 </head>
 <body>
 <div class="first">
     <div class="center-card">
         <div class="mark">
-            <p class="name">《XXX》</p>
-            <p class="date">2016.11.10</p>
-            <p class="star">***</p>
+            <p class="name">《瑞士军刀男》</p>
+            <p class="date">2016.09.27</p>
+            <p class="star">
+                <i class="fa fa-star-o">
+                    <span class="star-middle middle1"></span>
+                    <i class="fa fa-star star-bottom"></i>
+                </i>
+                <i class="fa fa-star-o">
+                    <span class="star-middle middle2"></span>
+                    <i class="fa fa-star star-bottom"></i>
+                </i>
+                <i class="fa fa-star-o">
+                    <span class="star-middle middle3"></span>
+                    <i class="fa fa-star star-bottom"></i>
+                </i>
+                <i class="fa fa-star-o">
+                    <span class="star-middle middle4"></span>
+                    <i class="fa fa-star star-bottom"></i>
+                </i>
+            </p>
         </div>
         <div class="links">
-            <a href="">Likes</a>
-            <a href="">Random</a>
-            <a href="">Top10</a>
+            <a href=""><i class="fa fa-heart-o"></i> Likes </a>
+            <a href=""><i class="fa fa-random"></i> Random </a>
+            <a href=""><i class="fa fa-list-ol"></i> Top10 </a>
+        </div>
+        <div class="card-side" style="left:10px">
+            <div class="q"></div>
+            <div class="q"></div>
+            <div class="q"></div>
+            <div class="q"></div>
+            <div class="q"></div>
+            <div class="q"></div>
+        </div>
+        <div class="card-side" style="right: 10px">
+            <div class="q"></div>
+            <div class="q"></div>
+            <div class="q"></div>
+            <div class="q"></div>
+            <div class="q"></div>
+            <div class="q"></div>
         </div>
     </div>
 </div>
