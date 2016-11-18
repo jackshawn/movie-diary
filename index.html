@@ -20,12 +20,13 @@
             position: absolute;
             top: 0;
             right: 0;
-            bottom: 0;
+            bottom: -10px;
             left: 0;
             width: auto;
             height: auto;
             background: url('images/1.jpg') center no-repeat;
             background-size: cover;
+            /*-webkit-filter: blur(10px)*/
         }
 
         .center-card {
@@ -115,11 +116,8 @@
 
         #next {
             position: relative;
-        }
-
-        .model,
-        .movie {
-            width: 25%;
+            border-radius: 10px;
+            background: #ccc;
         }
 
         .movie {
@@ -129,51 +127,43 @@
         .movie img {
             display: inline-block;
             width: 90%;
-            margin: 5%;
-            border-radius: 3px;
-            animation: zoom-out .6s;
-            animation-fill-mode: forwards;
-
+            margin: 5% 5% 0;
+            border-radius: 5px;
         }
 
-        .movie img:hover {
-            animation: zoom-in .4s;
-            animation-fill-mode: forwards;
-        }
-
-        .line {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            z-index: -2;
-            margin-left: -10px;
-            width: 20px;
-            height: auto;
-            background: #666;
+        .movie .tag {
+            margin: 0 5%;
+            line-height: 36px;
             overflow: hidden;
         }
 
-        .dots {
-            position: absolute;
-            top: -6px;
-            bottom: -6px;
-            left: 50%;
-            margin-left: -8px;
-            width: 10px;
-            height: auto;
-            border: 3px dotted #dfdfdf;
-            background: #666;
+        .tag .name {
+            float: left;
+            margin-right: 10px;
         }
 
-        @media (max-width: 800px) {
+        .tag .comment {
+            float: left;
+        }
+
+        @media (min-width: 1024px) {
+            .model,
+            .movie {
+                width: 25%;
+            }
+        }
+
+        @media (max-width: 1024px) {
             .model,
             .movie {
                 width: 50%;
             }
+        }
 
-            .line {
-                display: none;
+        @media (max-width: 500px) {
+            .model,
+            .movie {
+                width: 100%;
             }
         }
 
@@ -273,38 +263,188 @@
     <div class="model"></div>
     <div class="movie">
         <img src="images/1.jpg" alt="">
-    </div>
-    <div class="movie">
-        <img src="images/2.jpg" alt="">
-    </div>
-    <div class="movie">
-        <img src="images/2.jpg" alt="">
+        <div class="tag">
+            <div class="name">
+                <i class="fa fa-film"></i> : XXXX
+            </div>
+            <div class="comment">
+                <span class="stars">
+                    <i class="fa fa-heart-o"></i> :
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="date">
+                    <i class="fa fa-calendar"></i> : 2016-11-11
+                </span>
+            </div>
+
+        </div>
     </div>
     <div class="movie">
         <img src="images/1.jpg" alt="">
+        <div class="tag">
+            <div class="name">
+                <i class="fa fa-film"></i> : XXXX
+            </div>
+            <div class="comment">
+                <span class="stars">
+                    <i class="fa fa-heart-o"></i> :
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="date">
+                    <i class="fa fa-calendar"></i> : 2016-11-11
+                </span>
+            </div>
+
+        </div>
     </div>
     <div class="movie">
         <img src="images/1.jpg" alt="">
+        <div class="tag">
+            <div class="name">
+                <i class="fa fa-film"></i> : XXXX
+            </div>
+            <div class="comment">
+                <span class="stars">
+                    <i class="fa fa-heart-o"></i> :
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="date">
+                    <i class="fa fa-calendar"></i> : 2016-11-11
+                </span>
+            </div>
+
+        </div>
     </div>
     <div class="movie">
         <img src="images/2.jpg" alt="">
+        <div class="tag">
+            <div class="name">
+                <i class="fa fa-film"></i> : XXXX
+            </div>
+            <div class="comment">
+                <span class="stars">
+                    <i class="fa fa-heart-o"></i> :
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="date">
+                    <i class="fa fa-calendar"></i> : 2016-11-11
+                </span>
+            </div>
+
+        </div>
     </div>
     <div class="movie">
         <img src="images/1.jpg" alt="">
+        <div class="tag">
+            <div class="name">
+                <i class="fa fa-film"></i> : XXXX
+            </div>
+            <div class="comment">
+                <span class="stars">
+                    <i class="fa fa-heart-o"></i> :
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="date">
+                    <i class="fa fa-calendar"></i> : 2016-11-11
+                </span>
+            </div>
+
+        </div>
     </div>
     <div class="movie">
         <img src="images/2.jpg" alt="">
+        <div class="tag">
+            <div class="name">
+                <i class="fa fa-film"></i> : XXXX
+            </div>
+            <div class="comment">
+                <span class="stars">
+                    <i class="fa fa-heart-o"></i> :
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="date">
+                    <i class="fa fa-calendar"></i> : 2016-11-11
+                </span>
+            </div>
+
+        </div>
     </div>
-</div>
-<div class="line">
-    <div class="dots"></div>
+    <div class="movie">
+        <img src="images/1.jpg" alt="">
+        <div class="tag">
+            <div class="name">
+                <i class="fa fa-film"></i> : XXXX
+            </div>
+            <div class="comment">
+                <span class="stars">
+                    <i class="fa fa-heart-o"></i> :
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="date">
+                    <i class="fa fa-calendar"></i> : 2016-11-11
+                </span>
+            </div>
+
+        </div>
+    </div>
+    <div class="movie">
+        <img src="images/2.jpg" alt="">
+        <div class="tag">
+            <div class="name">
+                <i class="fa fa-film"></i> : XXXX
+            </div>
+            <div class="comment">
+                <span class="stars">
+                    <i class="fa fa-heart-o"></i> :
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="date">
+                    <i class="fa fa-calendar"></i> : 2016-11-11
+                </span>
+            </div>
+
+        </div>
+    </div>
+
 </div>
 <script src="js/jquery-2.2.3.min.js"></script>
 <script src="js/masonry.pkgd.js"></script>
 <script>
     (function () {
         var resizeFn = function () {
-            document.getElementById('next').style.top = innerHeight + 5 + 'px';
+            document.getElementById('next').style.top = innerHeight + 'px';
         };
         resizeFn();
         window.onresize = resizeFn;
