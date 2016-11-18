@@ -116,12 +116,20 @@
 
         #next {
             position: relative;
+            top: 1000px;
             border-radius: 10px;
-            background: #ccc;
+            background: #f5f5f5;
+        }
+        #next .bg{
+            position: absolute;
+            z-index: 1;
+            border-radius: 2px;
+            background: #ddd;
         }
 
         .movie {
             float: left;
+            z-index: 2;
         }
 
         .movie img {
@@ -130,10 +138,14 @@
             margin: 5% 5% 0;
             border-radius: 5px;
         }
+        .movie img:hover {
+            animation: img-shadow .5s .2s;
+            animation-fill-mode: forwards;
+        }
 
         .movie .tag {
             margin: 0 5%;
-            line-height: 36px;
+            line-height: 32px;
             overflow: hidden;
         }
 
@@ -145,7 +157,9 @@
         .tag .comment {
             float: left;
         }
-
+        .tag .comment .date{
+            margin-left: 10px;
+        }
         @media (min-width: 1024px) {
             .model,
             .movie {
@@ -209,6 +223,15 @@
                 margin: 5%;
             }
         }
+        
+        @-webkit-keyframes img-shadow {
+            from{
+                box-shadow: #666 0;
+            }
+            to{
+                box-shadow: #666 0 2px 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -269,51 +292,7 @@
             </div>
             <div class="comment">
                 <span class="stars">
-                    <i class="fa fa-heart-o"></i> :
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </span>
-                <span class="date">
-                    <i class="fa fa-calendar"></i> : 2016-11-11
-                </span>
-            </div>
-
-        </div>
-    </div>
-    <div class="movie">
-        <img src="images/1.jpg" alt="">
-        <div class="tag">
-            <div class="name">
-                <i class="fa fa-film"></i> : XXXX
-            </div>
-            <div class="comment">
-                <span class="stars">
-                    <i class="fa fa-heart-o"></i> :
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </span>
-                <span class="date">
-                    <i class="fa fa-calendar"></i> : 2016-11-11
-                </span>
-            </div>
-
-        </div>
-    </div>
-    <div class="movie">
-        <img src="images/1.jpg" alt="">
-        <div class="tag">
-            <div class="name">
-                <i class="fa fa-film"></i> : XXXX
-            </div>
-            <div class="comment">
-                <span class="stars">
-                    <i class="fa fa-heart-o"></i> :
+                    <i class="fa fa-bookmark"></i> :
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -350,7 +329,7 @@
         </div>
     </div>
     <div class="movie">
-        <img src="images/1.jpg" alt="">
+        <img src="images/3.jpg" alt="">
         <div class="tag">
             <div class="name">
                 <i class="fa fa-film"></i> : XXXX
@@ -358,6 +337,51 @@
             <div class="comment">
                 <span class="stars">
                     <i class="fa fa-heart-o"></i> :
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="date">
+                    <i class="fa fa-calendar"></i> : 2016-11-11
+                </span>
+            </div>
+
+        </div>
+    </div>
+    <div class="movie">
+        <img src="images/4.jpg" alt="">
+        <div class="tag">
+            <div class="name">
+                <i class="fa fa-film"></i> : XXXX
+            </div>
+            <div class="comment">
+                <span class="stars">
+                    <i class="fa fa-heart-o"></i> :
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="date">
+                    <i class="fa fa-calendar"></i> : 2016-11-11
+                </span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="movie">
+        <img src="images/1.jpg" alt="">
+        <div class="tag">
+            <div class="name">
+                <i class="fa fa-film"></i> : XXXX
+            </div>
+            <div class="comment">
+                <span class="stars">
+                    <i class="fa fa-bookmark"></i> :
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -394,7 +418,7 @@
         </div>
     </div>
     <div class="movie">
-        <img src="images/1.jpg" alt="">
+        <img src="images/3.jpg" alt="">
         <div class="tag">
             <div class="name">
                 <i class="fa fa-film"></i> : XXXX
@@ -402,6 +426,51 @@
             <div class="comment">
                 <span class="stars">
                     <i class="fa fa-heart-o"></i> :
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="date">
+                    <i class="fa fa-calendar"></i> : 2016-11-11
+                </span>
+            </div>
+
+        </div>
+    </div>
+    <div class="movie">
+        <img src="images/4.jpg" alt="">
+        <div class="tag">
+            <div class="name">
+                <i class="fa fa-film"></i> : XXXX
+            </div>
+            <div class="comment">
+                <span class="stars">
+                    <i class="fa fa-heart-o"></i> :
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="date">
+                    <i class="fa fa-calendar"></i> : 2016-11-11
+                </span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="movie">
+        <img src="images/1.jpg" alt="">
+        <div class="tag">
+            <div class="name">
+                <i class="fa fa-film"></i> : XXXX
+            </div>
+            <div class="comment">
+                <span class="stars">
+                    <i class="fa fa-bookmark"></i> :
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -437,7 +506,230 @@
 
         </div>
     </div>
+    <div class="movie">
+        <img src="images/3.jpg" alt="">
+        <div class="tag">
+            <div class="name">
+                <i class="fa fa-film"></i> : XXXX
+            </div>
+            <div class="comment">
+                <span class="stars">
+                    <i class="fa fa-heart-o"></i> :
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="date">
+                    <i class="fa fa-calendar"></i> : 2016-11-11
+                </span>
+            </div>
 
+        </div>
+    </div>
+    <div class="movie">
+        <img src="images/4.jpg" alt="">
+        <div class="tag">
+            <div class="name">
+                <i class="fa fa-film"></i> : XXXX
+            </div>
+            <div class="comment">
+                <span class="stars">
+                    <i class="fa fa-heart-o"></i> :
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="date">
+                    <i class="fa fa-calendar"></i> : 2016-11-11
+                </span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="movie">
+        <img src="images/1.jpg" alt="">
+        <div class="tag">
+            <div class="name">
+                <i class="fa fa-film"></i> : XXXX
+            </div>
+            <div class="comment">
+                <span class="stars">
+                    <i class="fa fa-bookmark"></i> :
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="date">
+                    <i class="fa fa-calendar"></i> : 2016-11-11
+                </span>
+            </div>
+
+        </div>
+    </div>
+    <div class="movie">
+        <img src="images/2.jpg" alt="">
+        <div class="tag">
+            <div class="name">
+                <i class="fa fa-film"></i> : XXXX
+            </div>
+            <div class="comment">
+                <span class="stars">
+                    <i class="fa fa-heart-o"></i> :
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="date">
+                    <i class="fa fa-calendar"></i> : 2016-11-11
+                </span>
+            </div>
+
+        </div>
+    </div>
+    <div class="movie">
+        <img src="images/3.jpg" alt="">
+        <div class="tag">
+            <div class="name">
+                <i class="fa fa-film"></i> : XXXX
+            </div>
+            <div class="comment">
+                <span class="stars">
+                    <i class="fa fa-heart-o"></i> :
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="date">
+                    <i class="fa fa-calendar"></i> : 2016-11-11
+                </span>
+            </div>
+
+        </div>
+    </div>
+    <div class="movie">
+        <img src="images/4.jpg" alt="">
+        <div class="tag">
+            <div class="name">
+                <i class="fa fa-film"></i> : XXXX
+            </div>
+            <div class="comment">
+                <span class="stars">
+                    <i class="fa fa-heart-o"></i> :
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="date">
+                    <i class="fa fa-calendar"></i> : 2016-11-11
+                </span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="movie">
+        <img src="images/1.jpg" alt="">
+        <div class="tag">
+            <div class="name">
+                <i class="fa fa-film"></i> : XXXX
+            </div>
+            <div class="comment">
+                <span class="stars">
+                    <i class="fa fa-bookmark"></i> :
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="date">
+                    <i class="fa fa-calendar"></i> : 2016-11-11
+                </span>
+            </div>
+
+        </div>
+    </div>
+    <div class="movie">
+        <img src="images/2.jpg" alt="">
+        <div class="tag">
+            <div class="name">
+                <i class="fa fa-film"></i> : XXXX
+            </div>
+            <div class="comment">
+                <span class="stars">
+                    <i class="fa fa-heart-o"></i> :
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="date">
+                    <i class="fa fa-calendar"></i> : 2016-11-11
+                </span>
+            </div>
+
+        </div>
+    </div>
+    <div class="movie">
+        <img src="images/3.jpg" alt="">
+        <div class="tag">
+            <div class="name">
+                <i class="fa fa-film"></i> : XXXX
+            </div>
+            <div class="comment">
+                <span class="stars">
+                    <i class="fa fa-heart-o"></i> :
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="date">
+                    <i class="fa fa-calendar"></i> : 2016-11-11
+                </span>
+            </div>
+
+        </div>
+    </div>
+    <div class="movie">
+        <img src="images/4.jpg" alt="">
+        <div class="tag">
+            <div class="name">
+                <i class="fa fa-film"></i> : XXXX
+            </div>
+            <div class="comment">
+                <span class="stars">
+                    <i class="fa fa-heart-o"></i> :
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="date">
+                    <i class="fa fa-calendar"></i> : 2016-11-11
+                </span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="bg"></div>
 </div>
 <script src="js/jquery-2.2.3.min.js"></script>
 <script src="js/masonry.pkgd.js"></script>
@@ -448,11 +740,26 @@
         };
         resizeFn();
         window.onresize = resizeFn;
-        $('#next').masonry({
+        var $next = $('#next');
+        $next.masonry({
             itemSelector: '.movie',
             columnWidth: '.model',
             percentPosition: true
         });
+
+        $('.movie').hover(function () {
+            var $this = $(this)
+            var top = $this.css('top');
+            var left = $this.css('left');
+            var width = $this.width();
+            var height = $this.height();
+//            $this.find('img').css({'box-shadow': '0px 0px 10px 2px #666'});
+            $('.bg').show().stop().animate({'top':top,'left':left,'width':width,'height':height})
+        })
+
+        $next.mouseleave(function () {
+            $(this).find('.bg').fadeOut();
+        })
     })()
 </script>
 </body>
