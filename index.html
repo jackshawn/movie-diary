@@ -116,31 +116,61 @@
 
         #next {
             position: relative;
-            top: 1000px;
             border-radius: 10px;
-            background: #f5f5f5;
-        }
-        #next .bg{
-            position: absolute;
-            z-index: 1;
-            border-radius: 2px;
-            background: #ddd;
+            background: #fefefe;
         }
 
-        .movie {
+        #next .bg {
+            position: absolute;
+            z-index: 1;
+        }
+
+        #next .more {
+            position: fixed;
+            bottom: 0;
+            width: 95%;
+            margin: 20px 2.5% 20px;
+            font: bold 48px/96px '';
+            text-align: center;
+            background: #ddd;
+            display: none;
+        }
+
+        #next .bg .border {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            bottom: -5px;
+            left: 5px;
+            width: auto;
+            height: auto;
+            /*border-radius: 5px;*/
+            background: #e8e8e8;
+            /*border: 1px solid #bbb;*/
+        }
+
+        .movie, .model {
             float: left;
             z-index: 2;
         }
-
+        .model{
+            display: none;
+        }
         .movie img {
             display: inline-block;
             width: 90%;
             margin: 5% 5% 0;
             border-radius: 5px;
+            opacity: 0;
         }
-        .movie img:hover {
-            animation: img-shadow .5s .2s;
-            animation-fill-mode: forwards;
+
+        .movie .loading {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font: bold 4em/1.5em '';
+            color: #333;
         }
 
         .movie .tag {
@@ -157,9 +187,11 @@
         .tag .comment {
             float: left;
         }
-        .tag .comment .date{
+
+        .tag .comment .date {
             margin-left: 10px;
         }
+
         @media (min-width: 1024px) {
             .model,
             .movie {
@@ -202,36 +234,6 @@
             }
         }
 
-        @-webkit-keyframes zoom-in {
-            from {
-                width: 90%;
-                margin: 5%;
-            }
-            to {
-                width: 96%;
-                margin: 2%;
-            }
-        }
-
-        @-webkit-keyframes zoom-out {
-            from {
-                width: 96%;
-                margin: 2%;
-            }
-            to {
-                width: 90%;
-                margin: 5%;
-            }
-        }
-        
-        @-webkit-keyframes img-shadow {
-            from{
-                box-shadow: #666 0;
-            }
-            to{
-                box-shadow: #666 0 2px 15px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -283,30 +285,39 @@
     </div>
 </div>
 <div id="next">
-    <div class="model"></div>
-    <div class="movie">
-        <img src="images/1.jpg" alt="">
+    <div class="model">
+        <div class="loading">
+            <i class="fa fa-film"></i>
+        </div>
+        <img src="" alt="">
         <div class="tag">
             <div class="name">
                 <i class="fa fa-film"></i> : XXXX
             </div>
             <div class="comment">
                 <span class="stars">
-                    <i class="fa fa-bookmark"></i> :
+                    <i class="fa fa-heart-o"></i> :
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-o"></i>
                 </span>
+                <i class="fa fa-calendar"></i> :
                 <span class="date">
-                    <i class="fa fa-calendar"></i> : 2016-11-11
+                     2016-11-11
                 </span>
             </div>
 
         </div>
     </div>
     <div class="movie">
+
+    </div>
+    <div class="movie">
+        <div class="loading">
+            <i class="fa fa-film"></i>
+        </div>
         <img src="images/2.jpg" alt="">
         <div class="tag">
             <div class="name">
@@ -329,6 +340,9 @@
         </div>
     </div>
     <div class="movie">
+        <div class="loading">
+            <i class="fa fa-film"></i>
+        </div>
         <img src="images/3.jpg" alt="">
         <div class="tag">
             <div class="name">
@@ -351,6 +365,9 @@
         </div>
     </div>
     <div class="movie">
+        <div class="loading">
+            <i class="fa fa-film"></i>
+        </div>
         <img src="images/4.jpg" alt="">
         <div class="tag">
             <div class="name">
@@ -372,8 +389,10 @@
 
         </div>
     </div>
-
     <div class="movie">
+        <div class="loading">
+            <i class="fa fa-film"></i>
+        </div>
         <img src="images/1.jpg" alt="">
         <div class="tag">
             <div class="name">
@@ -381,7 +400,7 @@
             </div>
             <div class="comment">
                 <span class="stars">
-                    <i class="fa fa-bookmark"></i> :
+                    <i class="fa fa-heart-o"></i> :
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -396,6 +415,9 @@
         </div>
     </div>
     <div class="movie">
+        <div class="loading">
+            <i class="fa fa-film"></i>
+        </div>
         <img src="images/2.jpg" alt="">
         <div class="tag">
             <div class="name">
@@ -418,6 +440,9 @@
         </div>
     </div>
     <div class="movie">
+        <div class="loading">
+            <i class="fa fa-film"></i>
+        </div>
         <img src="images/3.jpg" alt="">
         <div class="tag">
             <div class="name">
@@ -440,6 +465,9 @@
         </div>
     </div>
     <div class="movie">
+        <div class="loading">
+            <i class="fa fa-film"></i>
+        </div>
         <img src="images/4.jpg" alt="">
         <div class="tag">
             <div class="name">
@@ -462,305 +490,72 @@
         </div>
     </div>
 
-    <div class="movie">
-        <img src="images/1.jpg" alt="">
-        <div class="tag">
-            <div class="name">
-                <i class="fa fa-film"></i> : XXXX
-            </div>
-            <div class="comment">
-                <span class="stars">
-                    <i class="fa fa-bookmark"></i> :
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </span>
-                <span class="date">
-                    <i class="fa fa-calendar"></i> : 2016-11-11
-                </span>
-            </div>
 
-        </div>
-    </div>
-    <div class="movie">
-        <img src="images/2.jpg" alt="">
-        <div class="tag">
-            <div class="name">
-                <i class="fa fa-film"></i> : XXXX
-            </div>
-            <div class="comment">
-                <span class="stars">
-                    <i class="fa fa-heart-o"></i> :
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </span>
-                <span class="date">
-                    <i class="fa fa-calendar"></i> : 2016-11-11
-                </span>
-            </div>
-
-        </div>
-    </div>
-    <div class="movie">
-        <img src="images/3.jpg" alt="">
-        <div class="tag">
-            <div class="name">
-                <i class="fa fa-film"></i> : XXXX
-            </div>
-            <div class="comment">
-                <span class="stars">
-                    <i class="fa fa-heart-o"></i> :
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </span>
-                <span class="date">
-                    <i class="fa fa-calendar"></i> : 2016-11-11
-                </span>
-            </div>
-
-        </div>
-    </div>
-    <div class="movie">
-        <img src="images/4.jpg" alt="">
-        <div class="tag">
-            <div class="name">
-                <i class="fa fa-film"></i> : XXXX
-            </div>
-            <div class="comment">
-                <span class="stars">
-                    <i class="fa fa-heart-o"></i> :
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </span>
-                <span class="date">
-                    <i class="fa fa-calendar"></i> : 2016-11-11
-                </span>
-            </div>
-
-        </div>
+    <div class="bg">
+        <div class="border"></div>
     </div>
 
-    <div class="movie">
-        <img src="images/1.jpg" alt="">
-        <div class="tag">
-            <div class="name">
-                <i class="fa fa-film"></i> : XXXX
-            </div>
-            <div class="comment">
-                <span class="stars">
-                    <i class="fa fa-bookmark"></i> :
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </span>
-                <span class="date">
-                    <i class="fa fa-calendar"></i> : 2016-11-11
-                </span>
-            </div>
-
-        </div>
+    <div class="more">
+        <i class="fa fa-spinner"></i>
     </div>
-    <div class="movie">
-        <img src="images/2.jpg" alt="">
-        <div class="tag">
-            <div class="name">
-                <i class="fa fa-film"></i> : XXXX
-            </div>
-            <div class="comment">
-                <span class="stars">
-                    <i class="fa fa-heart-o"></i> :
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </span>
-                <span class="date">
-                    <i class="fa fa-calendar"></i> : 2016-11-11
-                </span>
-            </div>
-
-        </div>
-    </div>
-    <div class="movie">
-        <img src="images/3.jpg" alt="">
-        <div class="tag">
-            <div class="name">
-                <i class="fa fa-film"></i> : XXXX
-            </div>
-            <div class="comment">
-                <span class="stars">
-                    <i class="fa fa-heart-o"></i> :
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </span>
-                <span class="date">
-                    <i class="fa fa-calendar"></i> : 2016-11-11
-                </span>
-            </div>
-
-        </div>
-    </div>
-    <div class="movie">
-        <img src="images/4.jpg" alt="">
-        <div class="tag">
-            <div class="name">
-                <i class="fa fa-film"></i> : XXXX
-            </div>
-            <div class="comment">
-                <span class="stars">
-                    <i class="fa fa-heart-o"></i> :
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </span>
-                <span class="date">
-                    <i class="fa fa-calendar"></i> : 2016-11-11
-                </span>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="movie">
-        <img src="images/1.jpg" alt="">
-        <div class="tag">
-            <div class="name">
-                <i class="fa fa-film"></i> : XXXX
-            </div>
-            <div class="comment">
-                <span class="stars">
-                    <i class="fa fa-bookmark"></i> :
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </span>
-                <span class="date">
-                    <i class="fa fa-calendar"></i> : 2016-11-11
-                </span>
-            </div>
-
-        </div>
-    </div>
-    <div class="movie">
-        <img src="images/2.jpg" alt="">
-        <div class="tag">
-            <div class="name">
-                <i class="fa fa-film"></i> : XXXX
-            </div>
-            <div class="comment">
-                <span class="stars">
-                    <i class="fa fa-heart-o"></i> :
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </span>
-                <span class="date">
-                    <i class="fa fa-calendar"></i> : 2016-11-11
-                </span>
-            </div>
-
-        </div>
-    </div>
-    <div class="movie">
-        <img src="images/3.jpg" alt="">
-        <div class="tag">
-            <div class="name">
-                <i class="fa fa-film"></i> : XXXX
-            </div>
-            <div class="comment">
-                <span class="stars">
-                    <i class="fa fa-heart-o"></i> :
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </span>
-                <span class="date">
-                    <i class="fa fa-calendar"></i> : 2016-11-11
-                </span>
-            </div>
-
-        </div>
-    </div>
-    <div class="movie">
-        <img src="images/4.jpg" alt="">
-        <div class="tag">
-            <div class="name">
-                <i class="fa fa-film"></i> : XXXX
-            </div>
-            <div class="comment">
-                <span class="stars">
-                    <i class="fa fa-heart-o"></i> :
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </span>
-                <span class="date">
-                    <i class="fa fa-calendar"></i> : 2016-11-11
-                </span>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="bg"></div>
 </div>
 <script src="js/jquery-2.2.3.min.js"></script>
 <script src="js/masonry.pkgd.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
 <script>
-    (function () {
+    $(function () {
         var resizeFn = function () {
             document.getElementById('next').style.top = innerHeight + 'px';
         };
         resizeFn();
         window.onresize = resizeFn;
-        var $next = $('#next');
-        $next.masonry({
+        var $next = $('#next').masonry({
             itemSelector: '.movie',
             columnWidth: '.model',
             percentPosition: true
         });
 
+        $next.imagesLoaded().progress(function (isLoad, image) {
+            var $img = $(image.img);
+            $img.prev('.loading').fadeOut(function () {
+                $img.animate({'opacity': 1}, 600);
+            });
+            $next.masonry('layout');
+        });
         $('.movie').hover(function () {
-            var $this = $(this)
-            var top = $this.css('top');
-            var left = $this.css('left');
-            var width = $this.width();
-            var height = $this.height();
-//            $this.find('img').css({'box-shadow': '0px 0px 10px 2px #666'});
-            $('.bg').show().stop().animate({'top':top,'left':left,'width':width,'height':height})
-        })
+            var $this = $(this);
+            var option = {
+                top: $this.css('top'),
+                left: $this.css('left'),
+                width: $this.width(),
+                height: $this.height()
+            };
+            $('.bg').stop().animate(option, 300)
+        });
+        var $model = $('.model');
 
-        $next.mouseleave(function () {
-            $(this).find('.bg').fadeOut();
-        })
-    })()
+        $(window).scroll(function () {
+            var scrollTop = $(this).scrollTop();
+            var scrollHeight = $(document).height();
+            var windowHeight = $(this).height();
+            if (scrollTop + windowHeight == scrollHeight) {
+                $('.more').fadeIn(1000);
+                for(var i = 1;i<5;i++){
+                    var copy =$('.model').clone();
+                    copy.removeClass('model').addClass('movie').find('img').attr('src','images/'+i+'.jpg');
+                    copy.insertBefore('.more');
+                }
+                $next.imagesLoaded().progress(function (isLoad, image) {
+                    var $img = $(image.img);
+                    $img.prev('.loading').fadeOut(function () {
+                        $img.animate({'opacity': 1}, 600);
+                        $('.more').fadeOut(1000);
+                    });
+                    $next.masonry('layout');
+                });
+            }
+        });
+    })
 </script>
 </body>
 </html>
