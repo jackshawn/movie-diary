@@ -12,111 +12,57 @@
         }
 
         body {
-            font: 14px/1.5 "PingFang SC", Helvetica, "Helvetica Neue", "微软雅黑", Tahoma, Arial, sans-serif;
+            font: 14px/1.5 arial, sans-serif;
         }
 
         .first {
             position: absolute;
             top: 0;
             right: 0;
-            bottom: -10px;
+            bottom: 0;
             left: 0;
             width: auto;
             height: auto;
             background: url('images/1.jpg') center no-repeat;
             background-size: cover;
-            /*-webkit-filter: blur(10px)*/
+
         }
 
-        .center-card {
-            position: absolute;
-            bottom: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 10px 50px;
-            background: #b3b3b3;
-            opacity: .75;
-            border-radius: 5px;
-            overflow: hidden;
-            animation: card 1s;
-            animation-fill-mode: forwards;
-        }
-
-        .mark {
-            text-align: center;
-            font: bold 36px/1.5em '';
-        }
-
-        .star {
-            color: yellow;
-        }
-
-        .star-bottom {
-            width: 34px;
-            height: 36px;
-            position: absolute;
-            margin-top: -36px;
-            margin-left: -17px;
-            z-index: -2;
-        }
-
-        .star-middle {
-            width: 24px;
-            height: 36px;
-            position: absolute;
-            margin-top: -36px;
-            margin-left: -12px;
-            background: #b3b3b3;
-            z-index: -1;
-        }
-
-        .middle1 {
-            animation: star .5s .5s;
-            animation-fill-mode: forwards;
-        }
-
-        .middle2 {
-            animation: star .3s 1s;
-            animation-fill-mode: forwards;
-        }
-
-        .middle3 {
-            animation: star .3s 1.3s;
-            animation-fill-mode: forwards;
-        }
-
-        .middle4 {
-            animation: star 1s 1.6s;
-            animation-fill-mode: forwards;
-        }
-
-        .links {
-            text-align: center;
-        }
-
-        .links a {
-            color: #000;
-            text-decoration: none;
-        }
-
-        .center-card .card-side {
-            width: 24px;
+        .cover {
             position: absolute;
             top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: auto;
+            height: auto;
+            background: rgba(0, 0, 0, 0);
+            overflow: hidden;
+            animation: 2s cover ease 2s;
+            animation-fill-mode: forwards;
         }
 
-        .card-side .q {
-            width: 24px;
-            height: 24px;
-            margin: 8px 0;
-            border-radius: 4px;
-            background: #666;
+        .cover .card {
+            position: absolute;
+            right: -250px;
+            bottom: 0;
+            padding: 0 15px 20px 0;
+            text-align: right;
+            color: #fff;
+            font: 16px/1.5em '';
+            animation: 1s moveIn ease 3s;
+            animation-fill-mode: forwards;
+        }
+
+        .cover .card .links a {
+            color: #fff;
+            text-decoration: none;
         }
 
         #next {
             position: relative;
             border-radius: 10px;
-            background: #fefefe;
+            background: url("images/0.png");
         }
 
         #next .bg {
@@ -126,15 +72,15 @@
 
         #next .bg .border {
             position: absolute;
-            top: 5px;
-            right: 5px;
+            top: 6px;
+            right: 8px;
             bottom: -5px;
-            left: 5px;
+            left: 8px;
             width: auto;
             height: auto;
-            /*border-radius: 5px;*/
-            background: #e8e8e8;
-            /*border: 1px solid #bbb;*/
+            border-radius: 3px;
+            background: #fff;
+            box-shadow: 0 0 10px #ccc;
         }
 
         .model {
@@ -150,8 +96,13 @@
             display: inline-block;
             width: 90%;
             margin: 5% 5% 0;
-            border-radius: 5px;
+            border-radius: 3px;
             opacity: 0;
+        }
+
+        .movie:hover img {
+            border-radius: 0;
+            margin-top: 4.5%;
         }
 
         .movie .pic {
@@ -222,73 +173,44 @@
             }
         }
 
-        /*animate*/
-        @-webkit-keyframes star {
+        @keyframes cover {
             from {
-                margin-left: -12px;
+                background: rgba(0, 0, 0, 0);
             }
             to {
-                margin-left: 12px;
+                background: rgba(0, 0, 0, .4);
             }
         }
 
-        @-webkit-keyframes card {
+        @keyframes moveIn {
             from {
-                min-width: 88px;
-                height: 0;
+                right: -250px;
             }
             to {
-                height: 180px;
-                min-width: 300px;
+                right: 0;
             }
         }
     </style>
 </head>
 <body>
 <div class="first">
-    <div class="center-card">
-        <div class="mark">
-            <p class="name">《瑞士军刀男》</p>
-            <p class="date">2016.09.27</p>
-            <p class="star">
-                <i class="fa fa-star-o">
-                    <span class="star-middle middle1"></span>
-                    <i class="fa fa-star star-bottom"></i>
-                </i>
-                <i class="fa fa-star-o">
-                    <span class="star-middle middle2"></span>
-                    <i class="fa fa-star star-bottom"></i>
-                </i>
-                <i class="fa fa-star-o">
-                    <span class="star-middle middle3"></span>
-                    <i class="fa fa-star star-bottom"></i>
-                </i>
-                <i class="fa fa-star-o">
-                    <span class="star-middle middle4"></span>
-                    <i class="fa fa-star star-bottom"></i>
-                </i>
-            </p>
-        </div>
-        <div class="links">
-            <a href=""><i class="fa fa-heart-o"></i> Likes </a>
-            <a href=""><i class="fa fa-random"></i> Random </a>
-            <a href=""><i class="fa fa-list-ol"></i> Top10 </a>
-        </div>
-        <div class="card-side" style="left:10px">
-            <div class="q"></div>
-            <div class="q"></div>
-            <div class="q"></div>
-            <div class="q"></div>
-            <div class="q"></div>
-            <div class="q"></div>
-        </div>
-        <div class="card-side" style="right: 10px">
-            <div class="q"></div>
-            <div class="q"></div>
-            <div class="q"></div>
-            <div class="q"></div>
-            <div class="q"></div>
-            <div class="q"></div>
+    <div class="cover">
+        <div class="card">
+            <div class="mark">
+                <p class="name">Swiss Army Man</p>
+                <p class="date">2016.09.27</p>
+                <p class="star">
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>
+
+                </p>
+            </div>
+            <div class="links">
+                <a href=""><i class="fa fa-heart-o"></i> Likes </a>
+                <a href=""><i class="fa fa-random"></i> Random </a>
+                <a href=""><i class="fa fa-list-ol"></i> Top10 </a>
+            </div>
         </div>
     </div>
 </div>
@@ -320,8 +242,8 @@
     <div class="movie"></div>
 </div>
 <script src="js/jquery-2.2.3.min.js"></script>
-<script src="js/masonry.pkgd.js"></script>
-<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/masonry.pkgd.min.js"></script>
+<script src="js/imagesloaded.pkgd.js"></script>
 <script src="js/data.js"></script>
 <script>
     $(function () {
@@ -340,8 +262,8 @@
                 $next.masonry('layout');
             })
         };
-
         var addMovie = (function () {
+            var movie = movie1.all;
             var i = 0;
             var l = movie.length;
             var n = 5;
@@ -362,7 +284,6 @@
                         if (!x) {
                             if (x < .5) {
                                 copy.find('.stars>span').append($('<i class="fa fa-star-o"></i>'));
-
                             } else {
                                 copy.find('.stars>span').append($('<i class="fa fa-star-half"></i>'));
                             }
@@ -376,13 +297,12 @@
                 n += 5;
             }
         })();
-        
+
         $next.masonry({
             itemSelector: '.movie',
             columnWidth: '.model',
             percentPosition: true
         });
-
         $next.on('mouseenter', '.movie', function () {
             var $this = $(this);
             var option = {
@@ -393,7 +313,6 @@
             };
             $('.bg').show().stop().animate(option, 300)
         });
-
         $(window).scroll(function () {
             var scrollTop = $(this).scrollTop();
             var scrollHeight = $(document).height();
