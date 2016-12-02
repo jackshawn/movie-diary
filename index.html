@@ -12,7 +12,8 @@
         }
 
         body {
-            font: 14px/1.5 arial, sans-serif;
+            font: 14px/1.5 Arial, sans-serif;
+            background: url("images/0.png");
         }
 
         .first {
@@ -25,44 +26,62 @@
             height: auto;
             background: url('images/1.jpg') center no-repeat;
             background-size: cover;
-
+            overflow: hidden;
         }
 
         .cover {
             position: absolute;
-            top: 0;
             right: 0;
-            bottom: 0;
+            bottom: -115px;
             left: 0;
             width: auto;
-            height: auto;
+            height: 115px;
             background: rgba(0, 0, 0, 0);
             overflow: hidden;
-            animation: 2s cover ease 2s;
+            animation: .5s cover linear 2s;
+            animation-fill-mode: forwards;
+            padding-right: 10px;
+            color: #fff;
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .cover p {
+            position: relative;
+            text-align: right;
+            left: 30%;
+            opacity: 0;
+        }
+
+        .cover .name {
+            animation: 1s moveIn ease 2.5s;
             animation-fill-mode: forwards;
         }
 
-        .cover .card {
-            position: absolute;
-            right: -250px;
-            bottom: 0;
-            padding: 0 15px 20px 0;
-            text-align: right;
-            color: #fff;
-            font: 16px/1.5em '';
+        .cover .date {
             animation: 1s moveIn ease 3s;
             animation-fill-mode: forwards;
         }
 
-        .cover .card .links a {
+        .cover .star {
+            animation: 1s moveIn ease 3.5s;
+            animation-fill-mode: forwards;
+        }
+
+        .cover .links {
+            left: 0;
+            bottom: 30px;
+            animation: 1s moveUp ease 4.5s;
+            animation-fill-mode: forwards;
+        }
+
+        .cover .links a {
             color: #fff;
             text-decoration: none;
         }
 
         #next {
             position: relative;
-            border-radius: 10px;
-            background: url("images/0.png");
         }
 
         #next .bg {
@@ -115,7 +134,7 @@
             right: 0;
             bottom: 0;
             left: 0;
-            margin: 5% 5% 0;
+            margin: 4.5% 5% 0;
             width: auto;
             height: auto;
             text-align: center;
@@ -152,6 +171,26 @@
             margin-left: 10px;
         }
 
+        .tag .comment .remark {
+            margin-left: 10px;
+            display: none;
+        }
+
+        #next .weibo {
+            display: none;
+            margin-bottom: 10px;
+            font-size: 14px;
+            position: absolute;
+            bottom: -48px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        #next .weibo > span {
+            font-size: 12px;
+        }
+
         @media (min-width: 1024px) {
             .model,
             .movie {
@@ -175,19 +214,34 @@
 
         @keyframes cover {
             from {
+                bottom: -115px;
                 background: rgba(0, 0, 0, 0);
             }
             to {
+                bottom: 0;
                 background: rgba(0, 0, 0, .4);
             }
         }
 
         @keyframes moveIn {
             from {
-                right: -250px;
+                left: 30%;
+                opacity: 0;
             }
             to {
-                right: 0;
+                left: 0;
+                opacity: 1;
+            }
+        }
+
+        @keyframes moveUp {
+            from {
+                bottom: -30px;
+                opacity: 0;
+            }
+            to {
+                bottom: 0;
+                opacity: 1;
             }
         }
     </style>
@@ -195,23 +249,18 @@
 <body>
 <div class="first">
     <div class="cover">
-        <div class="card">
-            <div class="mark">
-                <p class="name">Swiss Army Man</p>
-                <p class="date">2016.09.27</p>
-                <p class="star">
-                    <i class="fa fa-star-o"></i>
-                    <i class="fa fa-star-o"></i>
-                    <i class="fa fa-star-o"></i>
-
-                </p>
-            </div>
-            <div class="links">
-                <a href=""><i class="fa fa-heart-o"></i> Likes </a>
-                <a href=""><i class="fa fa-random"></i> Random </a>
-                <a href=""><i class="fa fa-list-ol"></i> Top10 </a>
-            </div>
-        </div>
+        <p class="name">Swiss Army Man</p>
+        <p class="date">2016.09.27</p>
+        <p class="star">
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+        </p>
+        <p class="links">
+            <a><i class="fa fa-heart-o"></i> Likes </a>
+            <a><i class="fa fa-random"></i> Random </a>
+            <a><i class="fa fa-list-ol"></i> Top10 </a>
+        </p>
     </div>
 </div>
 <div id="next">
@@ -221,7 +270,7 @@
     <div class="model">
         <div class="pic">
             <div class="loading">
-                <i class="fa fa-film"></i>
+                <i class="fa"></i>
             </div>
             <img src="images/1.jpg" alt="">
         </div>
@@ -236,14 +285,20 @@
                 <span class="date">
                     <i class="fa fa-calendar"></i> : <span></span>
                 </span>
+                <span class="remark">
+                    <i class="fa fa-pencil"></i> : <span></span>
+                </span>
             </div>
         </div>
     </div>
     <div class="movie"></div>
+    <p class="weibo">
+        <i class="fa fa-weibo"></i><br> @motel1969
+    </p>
 </div>
 <script src="js/jquery-2.2.3.min.js"></script>
 <script src="js/masonry.pkgd.min.js"></script>
-<script src="js/imagesloaded.pkgd.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
 <script src="js/data.js"></script>
 <script>
     $(function () {
@@ -252,13 +307,17 @@
         var $model = $('.model');
         var setTop = function () {
             $next.css('top', innerHeight);
-            $bg.fadeOut();
+            $bg.hide();
         };
         var picLoad = function () {
             $next.imagesLoaded().progress(function (isLoad, image) {
                 var $img = $(image.img);
-                $img.prev('.loading').hide();
-                $img.animate({'opacity': 1}, 600);
+                if (!image.isLoaded) {
+                    $img.height(100).prev('.loading').find('i').removeClass().addClass('fa fa-meh-o');
+                } else {
+                    $img.prev('.loading').hide();
+                    $img.animate({'opacity': 1}, 600);
+                }
                 $next.masonry('layout');
             })
         };
@@ -267,12 +326,13 @@
             var i = 0;
             var l = movie.length;
             var n = 5;
+            var icons = ['film', 'anchor', 'archive', 'automobile', 'balance-scale', 'bank', 'bar-chart', 'bell-o', 'binoculars', 'birthday-cake', 'bolt', 'bomb', 'book', 'bug', 'bullhorn', 'bus', 'camera', 'coffee', 'cutlery', 'desktop', 'eye', 'flag-o', 'futbol-o', 'gamepad', 'gavel', 'gift', 'glass', 'headphones', 'institution', 'lemon-o', 'life-saver', 'magic', 'microphone', 'paper-plane-o', 'paint-brush', 'tree', 'github', 'github-alt'];
             return function () {
                 var wrap = $('<div></div>');
                 for (; i < n; i++) {
                     if (i < l) {
                         var copy = $model.clone().removeClass('model').addClass('movie');
-                        copy.find('.loading').show();
+                        copy.find('.loading').show().find('i').addClass('fa-' + icons[Math.floor(icons.length * Math.random())]);
                         copy.find('img').attr({'src': movie[i].image, 'alt': movie[i].remark}).css('opacity', 0);
                         copy.find('.name>span').text(movie[i].name);
                         copy.find('.date>span').text(movie[i].date);
@@ -289,6 +349,8 @@
                             }
                         }
                         wrap.append(copy);
+                    } else {
+                        $('.weibo').show()
                     }
                 }
                 var items = wrap.children();
@@ -297,21 +359,31 @@
                 n += 5;
             }
         })();
-
+        var bgMove = function (el) {
+            var option = {
+                top: el.css('top'),
+                left: el.css('left'),
+                width: el.width(),
+                height: el.height()
+            };
+            $bg.show().stop().animate(option, 300)
+        };
         $next.masonry({
             itemSelector: '.movie',
             columnWidth: '.model',
             percentPosition: true
         });
         $next.on('mouseenter', '.movie', function () {
-            var $this = $(this);
-            var option = {
-                top: $this.css('top'),
-                left: $this.css('left'),
-                width: $this.width(),
-                height: $this.height()
-            };
-            $('.bg').show().stop().animate(option, 300)
+            bgMove($(this))
+        });
+        $next.on('click', 'img', function () {
+            var alt = $(this).attr('alt');
+            if (alt) {
+                $(this).parent().next().find('.remark').show().find('span').text(alt);
+                $(this).attr('alt', '');
+                bgMove($(this).parent().parent());
+                picLoad();
+            }
         });
         $(window).scroll(function () {
             var scrollTop = $(this).scrollTop();
