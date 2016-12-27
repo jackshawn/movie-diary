@@ -338,12 +338,12 @@
                         copy.find('img').attr({'src': 'images/'+movie[i].name.split(' ').join('')+'.jpg', 'alt': movie[i].remark}).css('opacity', 0);
                         copy.find('.name>span').text(movie[i].name);
                         copy.find('.date>span').text(movie[i].date);
-                        var z = Math.floor(movie[i].star);
+                        var z = movie[i].star|0;
                         var x = movie[i].star - z;
                         for (var j = 0; j < z; j++) {
                             copy.find('.stars>span').append($('<i class="fa fa-star"></i>'));
                         }
-                        if (!x) {
+                        if (x) {
                             if (x < .5) {
                                 copy.find('.stars>span').append($('<i class="fa fa-star-o"></i>'));
                             } else {
