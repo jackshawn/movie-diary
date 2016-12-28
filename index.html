@@ -24,8 +24,7 @@
             left: 0;
             width: auto;
             height: auto;
-            background: url('images/SwissArmyMan.jpg') center no-repeat;
-            background-size: cover;
+            background-size: cover!important;
             overflow: hidden;
         }
 
@@ -250,14 +249,9 @@
 <body>
 <div class="first">
     <div class="cover">
-        <p class="name">Swiss Army Man</p>
-        <p class="date">2016.09.27</p>
-        <p class="star">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-        </p>
+        <p class="name"></p>
+        <p class="date"></p>
+        <p class="star"></p>
         <p class="links">
             <a><i class="fa fa-heart-o"></i> Likes </a>
             <a><i class="fa fa-random"></i> Random </a>
@@ -274,7 +268,7 @@
             <div class="loading">
                 <i class="fa"></i>
             </div>
-            <img src="images/1.jpg" alt="">
+            <img src="" alt="">
         </div>
         <div class="tag">
             <div class="name">
@@ -323,6 +317,36 @@
                 $next.masonry('layout');
             })
         };
+        var addStar = function (el, score) {
+            var z = score|0;
+            var x = score - z;
+            for (var j = 0; j < z; j++) {
+                el.append($('<i class="fa fa-star"></i>'));
+            }
+            if (x) {
+                if (x < .5) {
+                    el.append($('<i class="fa fa-star-o"></i>'));
+                } else {
+                    el.append($('<i class="fa fa-star-half-o"></i>'));
+                }
+            }
+            return el;
+        };
+        (function () {
+            var best = 0;
+            var flag = 0;
+            for(var i = 0;i< 11;i++){
+                if(movies.all[i].star>best){
+                    best = movies.all[i].star;
+                    flag = i;
+                }
+            }
+            addStar($('.first').css('background','url("'+movies.all[flag].image+'") center no-repeat')
+                .find('.name').text(movies.all[flag].name)
+                .next().text(movies.all[flag].date)
+                .next(),movies.all[flag].star);
+            movies.all.splice(flag,1);
+        })();
         var addMovie = (function () {
             var movie = movies.all;
             var i = 0;
@@ -338,18 +362,7 @@
                         copy.find('img').attr({'src': movie[i].image, 'alt': movie[i].remark}).css('opacity', 0);
                         copy.find('.name>span').text(movie[i].name);
                         copy.find('.date>span').text(movie[i].date);
-                        var z = movie[i].star|0;
-                        var x = movie[i].star - z;
-                        for (var j = 0; j < z; j++) {
-                            copy.find('.stars>span').append($('<i class="fa fa-star"></i>'));
-                        }
-                        if (x) {
-                            if (x < .5) {
-                                copy.find('.stars>span').append($('<i class="fa fa-star-o"></i>'));
-                            } else {
-                                copy.find('.stars>span').append($('<i class="fa fa-star-half"></i>'));
-                            }
-                        }
+                        addStar(copy.find('.stars>span'),movie[i].star);
                         wrap.append(copy);
                     } else {
                         $('.weibo').show()

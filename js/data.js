@@ -74,14 +74,14 @@ var movies = {
             name: 'Hell or High Water',
             star: 3.9,
             date: '2016-11-20',
-            image: 'http://p0.meituan.net/movie/642862b082663f5c4628306d84d34825113202.jpg',
+            image: 'https://images-na.ssl-images-amazon.com/images/M/MV5BZjBiZmRhYzMtZTVjYS00MzMyLWExN2MtM2M1MDI2MGUwYjAxXkEyXkFqcGdeQXVyMzc3NjQzOQ@@._V1_.jpg',
             remark: ''
         },
         {
             name: 'The Secret Life of Pets',
             star: 3.6,
-            date: '',
-            image: '',
+            date: '2016-11-20',
+            image: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMjMwNDI3OTkxNF5BMl5BanBnXkFtZTgwMDYwODQzOTE@._V1_SX1777_CR0,0,1777,957_AL_.jpg',
             remark: ''
         },
         {
