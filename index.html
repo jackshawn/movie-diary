@@ -335,7 +335,7 @@
                     if (i < l) {
                         var copy = $model.clone().removeClass('model').addClass('movie');
                         copy.find('.loading').show().find('i').addClass('fa-' + icons[Math.floor(icons.length * Math.random())]);
-                        copy.find('img').attr({'src': 'images/'+movie[i].name.split(' ').join('')+'.jpg', 'alt': movie[i].remark}).css('opacity', 0);
+                        copy.find('img').attr({'src': movie[i].image, 'alt': movie[i].remark}).css('opacity', 0);
                         copy.find('.name>span').text(movie[i].name);
                         copy.find('.date>span').text(movie[i].date);
                         var z = movie[i].star|0;
