@@ -325,9 +325,9 @@
             }
             if (x) {
                 if (x < .5) {
-                    el.append($('<i class="fa fa-star-o"></i>'));
+                    el.append($('<i class="fa fa-star-o" style="opacity: '+x+';"></i>'));
                 } else {
-                    el.append($('<i class="fa fa-star-half-o"></i>'));
+                    el.append($('<i class="fa fa-star-half-o" style="opacity: '+x+';"></i>'));
                 }
             }
             return el;

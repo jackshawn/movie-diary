@@ -87,50 +87,57 @@ var movies = {
         {
             name: 'Finding Dory',
             star: 3.4,
-            date: '',
-            image: '',
+            date: '2016-11-12',
+            image: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ3NTg2NjM5Ml5BMl5BanBnXkFtZTgwNzQzODQ5ODE@._V1_SY1000_SX700_AL_.jpg',
             remark: ''
         },
         {
             name: '追凶者也',
             star: 4,
-            date: '',
-            image: '',
+            date: '2016-11-12',
+            image: 'http://p1.meituan.net/movie/29112c50f48121c17b6ff0d3ca31022e1686371.jpg',
             remark: '张译演的真好'
         },
         {
             name: 'Sausage Party',
             star: 3.8,
-            date: '',
-            image: '',
+            date: '2016-10-23',
+            image: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMzA5ZWM1NTItZDVlMS00NjVkLTg1NTgtMDVlODdiMGFjY2NjXkEyXkFqcGdeQXVyNjM2MDU3MDE@._V1_.jpg',
             remark: '最爱诺顿竟然是个娘娘腔的甜甜圈'
         },
         {
             name: '寒战2',
             star: 3.4,
-            date: '',
-            image: '',
+            date: '2016-10-23',
+            image: 'http://p1.meituan.net/mmdb/42536a6c2a32876ba989e3a9202bfe392118751.png',
+            remark: '彭于晏挺帅，可惜盒饭领的太早'
+        },
+        {
+            name: 'Hunt for the Wilderpeople',
+            star: 3.5,
+            date: '2016-10-02',
+            image: 'https://images-na.ssl-images-amazon.com/images/M/MV5BZmZkYzcwODEtYTRiMy00ZWNhLWE1YTktNjVkMWY4MDAxNGFmXkEyXkFqcGdeQXVyMTExNDQ2MTI@._V1_SY1000_CR0,0,699,1000_AL_.jpg',
             remark: ''
         },
         {
-            name: '神奇队长',
+            name: 'Captain Fantastic',
             star: 3.8,
             date: '',
-            image: '',
+            image: 'https://images-na.ssl-images-amazon.com/images/M/MV5BOTVjZDViZDEtMzY0Yi00ZDYxLWE4ZDQtNGI0ZGJmMTZiZDI0L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjEwNTUzNjI@._V1_.jpg',
             remark: '拖家带口版的《荒野生存》'
         },
         {
             name: 'Nerve',
             star: 3.8,
             date: '',
-            image: '',
-            remark: '解释游戏那段视频挺魔性的'
+            image: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTg4ODQ1ODAxMV5BMl5BanBnXkFtZTgwMTQ4OTAzOTE@._V1_SY1000_SX675_AL_.jpg',
+            remark: '解释游戏那段视频挺魔性的挺鬼畜的'
         },
         {
             name: 'Swiss Army Man',
             star: 4.1,
             date: '',
-            image: '',
+            image: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMjEyMTY3NGMtNDlkNi00Y2MzLTkwNTMtMTMzZDRhMjZiODkxXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_.jpg',
             remark: '死尸活成了我，我似乎从来就没有活过。深刻，沉重'
         },
         {
